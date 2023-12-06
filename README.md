@@ -9,6 +9,31 @@ flask run --debug
 To run the summarizer, run the following curl command in another terminal:
 `curl -X POST -H "Content-Type: application/json" -d <JSON> http://127.0.0.1:5000/summarize`
 The database will NOT reset when you run the summarizer! 
+
+If you don't want to run a whole bunch of requests at once, you can use the following endpoints:
+
+### Initialize the database and credit card
+`GET /init/<credit_limit>`
+
+For the following request bodies, the body should look something like:
+```
+    {
+        "eventType": <TXN_AUTHED | PAYMENT_INITIATED | TXN_CLEARED | PAYMENT_CANCELED | TXN_SETTLED | PAYMENT_POSTED>,
+        "eventTime": <int>,
+        "txnId": <string>,
+        "amount":<int>
+    }
+```
+
+### Create a new transaction/payment
+`POST /authorize`
+
+### Clear a transaction or cancel a payment
+`POST /cancel`
+
+### Settle a transaction or post a payment
+`POST /settle`
+
 To reset it, run:
 `curl http://127.0.0.1:5000/reset`
 
