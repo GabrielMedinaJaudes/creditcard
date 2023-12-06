@@ -1,10 +1,9 @@
-To run this Flask Server, run the commands:
+To run this Flask Server, run the commands in the root directory:
 
 ```
-cd creditcard
-python3 -m venv .venv
-. .venv/bin/activate
-flask run --debug
+python3 -m venv .venv &&
+. .venv/bin/activate &&
+flask run --debug 
 ```
 
 To run the summarizer, run the following curl command in another terminal:
