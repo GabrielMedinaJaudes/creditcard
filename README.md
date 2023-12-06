@@ -17,8 +17,8 @@ To query the results of the last summary run:
 `curl http://127.0.0.1:5000/summarize`
 
 Example JSON:
-
-`{
+```
+{
     "creditLimit":1000,
     "events":
         [
@@ -27,8 +27,8 @@ Example JSON:
             {"eventType":"TXN_AUTHED","eventTime":3,"txnId":"t2","amount":-456},
             {"eventType":"TXN_SETTLED","eventTime":4,"txnId":"t2","amount":-456}
         ]
-}`
-
+}
+```
 Example commands:
 ### Refund
 ```
